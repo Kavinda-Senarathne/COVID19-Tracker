@@ -1,0 +1,123 @@
+@import "../themes/vars";
+::ng-deep {
+  .app__list {
+    height: 100%;
+    padding: $app-gap;
+    width: 100%;
+
+    .igx-list__item-actions {
+      font-weight: bold;
+    }
+
+    &--deaths {
+      .igx-card-header__title {
+        font-weight: bold;
+      }
+    }
+
+    &--recovered {
+      .igx-card-header__title {
+        font-weight: bold;
+      }
+    }
+
+    &--confirmed {
+      .igx-card-header__title {
+        font-weight: bold;
+      }
+      max-width: 300px;
+    }
+
+    + .app__list {
+      padding-left: 0;
+    }
+
+    .app__list-holder {
+      height: 100%;
+    }
+
+    .app__card-header {
+      min-height: $card-header-height;
+    }
+
+    .app__card-content {
+      height: calc(100% - #{$card-header-height});
+      overflow: auto;
+      padding: 0;
+    }
+
+    .igx-list__item-base {
+      flex: 1 0 auto;
+    }
+
+    .app__list-inner {
+      overflow: auto;
+    }
+
+    .app__loader {
+      width:100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .app-light-theme{
+    .app__list {
+      &--deaths {
+        .app__card-header {
+          background: map-get($light-vars, deaths-bg) !important;
+        }
+        .igx-card-header__subtitle{
+          color: map-get($light-vars, deaths-color);
+        }
+      }
+      &--recovered {
+        .app__card-header {
+          background: map-get($light-vars, recovered-bg) !important;
+        }
+        .igx-card-header__subtitle{
+          color: map-get($light-vars, recovered-color);
+        }
+      }
+      &--confirmed {
+        .app__card-header {
+          background: map-get($light-vars, confirmed-bg) !important;
+        }
+        .igx-card-header__subtitle{
+          color: map-get($light-vars, confirmed-color);
+        }
+      }
+    }
+  }
+
+  .app-dark-theme {
+    .app__list {
+      &--deaths {
+        .app__card-header {
+          background: map-get($dark-vars, deaths-bg) !important;
+        }
+        .igx-card-header__subtitle{
+          color: map-get($dark-vars, deaths-color);
+        }
+      }
+      &--recovered {
+        .app__card-header {
+          background: map-get($dark-vars, recovered-bg) !important;
+        }
+        .igx-card-header__subtitle{
+          color: map-get($dark-vars, recovered-color);
+        }
+      }
+      &--confirmed {
+        .app__card-header {
+          background: map-get($dark-vars, confirmed-bg) !important;
+        }
+        .igx-card-header__subtitle{
+          color: map-get($dark-vars, confirmed-color);
+        }
+      }
+    }
+  }
+}
